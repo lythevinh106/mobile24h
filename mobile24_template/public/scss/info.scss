@@ -1,0 +1,180 @@
+.content-info {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    &-sidebar {
+        min-height: 400px;
+        font-family: Roboto;
+        font-weight: 500;
+        line-height: 20.8px;
+        width: 20%;
+        box-shadow: #cccccc 0px 4px 8px 0px;
+        background-color: rgb(244, 244, 244);
+        li {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            color: rgb(20 53 195);
+
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            margin: 0px 9.6px;
+            i {
+                margin-right: 20px;
+                color: rgb(51 51 51);
+
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+            }
+            a {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+            }
+        }
+
+        &__info {
+            display: flex;
+            align-items: center;
+            .sidebar__info__img {
+                i {
+                    font-size: 20px;
+                }
+            }
+            .sidebar__info-main {
+                &__title {
+                    color: rgb(51 51 51);
+                    font-family: Roboto;
+                    font-size: 12.8px;
+                    line-height: 16.64px;
+                }
+                &__name {
+                    color: rgb(51 51 51);
+                    font-family: Roboto;
+                    font-weight: 500;
+                    line-height: 20.8px;
+                    margin: 0px 0px 8px;
+                }
+            }
+        }
+    }
+
+    &-main {
+        width: 72%;
+        box-shadow: #cccccc 0px 4px 8px 0px;
+        background-color: rgb(244, 244, 244);
+        padding: 10px;
+        text-align: center;
+        &__title {
+            text-align: center;
+            color: rgb(51 51 51);
+            font-family: Roboto;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 26px;
+            margin: 0px 0px 8px;
+        }
+        form {
+            color: #222222;
+
+            font-family: -apple-system;
+            font-size: 16px;
+            font-weight: 600;
+            .gender {
+                margin-top: 20px;
+                display: flex;
+                &-main {
+                }
+            }
+            textarea {
+                display: block;
+                width: 100%;
+            }
+            label {
+            }
+        }
+    }
+
+    &-order {
+        width: 72%;
+        padding: 10px 20px;
+        box-shadow: #cccccc 0px 4px 8px 0px;
+        &__title {
+            text-align: center;
+            color: rgb(51 51 51);
+            font-family: Roboto;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 26px;
+            margin: 0px 0px 8px;
+        }
+        &__main {
+            margin-top: 30px;
+            width: 100%;
+            align-items: center;
+
+            .order__main-item {
+                margin-top: 20px;
+                justify-content: space-between;
+                display: flex;
+                box-shadow: #ccccd0 -2px 8px 57px;
+                padding: 15px 25px;
+                width: 100%;
+                height: 100px;
+
+                &__img {
+                    width: 20%;
+                    height: 100%;
+
+                    img {
+                        width: auto;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 0.3s linear;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                &__content {
+                    width: 50%;
+                    &__name {
+                        color: rgb(51 51 51);
+                        font-family: Roboto;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    &__number {
+                        font-family: Roboto;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+
+                    &__price {
+                        color: rgb(225 61 61);
+                        font-weight: 700;
+                        font-size: 14px;
+                    }
+                }
+
+                &__status {
+                    width: 20%;
+                    &__title {
+                        font-family: Roboto;
+                        font-size: 14px;
+                        color: rgb(225 61 61);
+                        font-weight: 600;
+                    }
+                    &__main {
+                        font-family: Roboto;
+                        font-size: 14px;
+                        color: rgb(70, 207, 150);
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

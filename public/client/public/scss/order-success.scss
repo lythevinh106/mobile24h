@@ -1,0 +1,42 @@
+.content-order-success {
+    &-main {
+        background-image: url("../../images/confirm-icon-edit.png");
+        width: 80%;
+        margin: 60px auto 0 auto;
+        height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        // margin-top: 60px;
+
+        .success__title {
+            color: rgb(51 51 51);
+            font-size: 27px;
+            font-weight: 600;
+
+            opacity: 1;
+            text-shadow: 2px 2px 2px #fff;
+        }
+
+        .success__btn-back {
+            margin-top: 30px;
+            text-align: center;
+
+            a {
+                font-size: 15px;
+                color: #ffff;
+                padding: 10px 30px;
+                font-weight: 700;
+                background-color: rgb(31 164 143);
+                text-shadow: #fff 1px 1px 1px 1px;
+                border-radius: 8px;
+                box-shadow: rgb(0 0 0 / 0.16) 0px 4px 6px 0px;
+            }
+        }
+    }
+}

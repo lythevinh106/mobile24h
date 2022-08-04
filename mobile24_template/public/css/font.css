@@ -1,0 +1,14 @@
+@font-face {
+  src: url(../font/PetitFormalScript-Regular.ttf);
+  font-family: PetitFormal;
+}
+@font-face {
+  src: url(../font/KdamThmorPro-Regular.ttf);
+  font-family: KdamThmorPro;
+}
+@font-face {
+  src: url(../font/WorkSans-VariableFont_wght.ttf);
+  font-family: WorkSans;
+}
+
+/*# sourceMappingURL=font.css.map */
