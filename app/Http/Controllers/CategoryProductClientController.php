@@ -70,11 +70,12 @@ class CategoryProductClientController extends Controller
 
 
         $page = $request->input('page', 0);
+
         $category_id = (int)$request->input("category_id");
 
 
         $products = $this->products_for_menu($request, $category_id, $page, self::LIMIT);
-
+        // dd(count($products));
         if (count($products) != 0) {
             $html = view("client.product.component.list", ["products" => $products])->render();
             return response()->json(['html' => $html]);

@@ -120,8 +120,8 @@
         </div>
 
         @if (count($products) > 0)
-            <p onclick="loadmore({{ $category_id }},'/load_product')" style="margin-top: 20px"
-                class="content-product-main__show__overview overview--btn mt-10">
+            <p onclick="loadmore({{ $category_id }},'/load_product',{{ request()->input('tag') }})"
+                style="margin-top: 20px" class="content-product-main__show__overview overview--btn mt-10">
                 <span>
                     <input type="hidden" value="1" id="page">
                     Xem thêm sản phảm
@@ -140,7 +140,7 @@
 
 @section('js')
     <script>
-        function loadmore(category_id, link) {
+        function loadmore(category_id, link, tag_ajax = null) {
 
             const page = Number($("#page").val());
 
@@ -151,7 +151,8 @@
                 url: link,
                 data: {
                     page,
-                    category_id
+                    category_id,
+                    tag_ajax
                 },
                 dataType: "json",
                 success: function(result) {

@@ -32,19 +32,27 @@ trait ProductClientService
 
 
 
-        // if ($request->input("tag")) {
-        //     dd($list_products->get());
-        // }
-        if ($request->input("tag")) {
+        $list_products->when($request->input("tag"), function ($query) use ($request) {
 
-            $list_products->join("product_tags", "product_tags.product_id", "=", "products.id")
+            $query->join("product_tags", "product_tags.product_id", "=", "products.id")
                 ->join("tags", "tags.id", "=", "product_tags.tag_id")->where("tags.id", $request->input("tag"));
-        }
+        });
+
+        $list_products->when($request->input('tag_ajax') != null, function ($query) use ($request) {
+
+            $query->join("product_tags", "product_tags.product_id", "=", "products.id")
+                ->join("tags", "tags.id", "=", "product_tags.tag_id")->where("tags.id", $request->input("tag"));
+        });
+
+
+
+
 
 
         // dd($list_products);
 
         $list_products->when($page != null, function ($query) use ($page, $limit) {
+            // dd("1");
             $query->offset($page * $limit);
         });
 

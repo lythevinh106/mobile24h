@@ -121,6 +121,7 @@
 .cart--main span a {
   color: #ffffff;
   display: inline-block;
+  font-size: 12px;
   font-family: WorkSans;
 }
 .cart--main span i {
