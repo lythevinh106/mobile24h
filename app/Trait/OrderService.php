@@ -115,10 +115,12 @@ trait OrderService
                     Order::find($order->id)->products()->attach($product_id, ['quantity' => $qty]);
 
 
-                    ///// update lai so luong san pham database
+                    ///// update lai so luong san pham  va them so luong da ban database
                     $old_product_quantity = Product::find($product_id)->number_product_quantity;
+                    $old_product_sold = Product::find($product_id)->product_sold;
                     Product::find($product_id)->update([
-                        "number_product_quantity" => $old_product_quantity - $qty
+                        "number_product_quantity" => $old_product_quantity - $qty,
+                        "product_sold" => $old_product_sold + $qty
                     ]);
                 }
             }

@@ -226,6 +226,10 @@ class ClientAuthController extends Controller
                 "email" => $user->email,
                 "user_id" => $user->id
             ]);
+
+            // return redirect()->route("client.store.take_password")
+        } else {
+            dd("sdad");
         }
     }
 

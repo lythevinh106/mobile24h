@@ -53,12 +53,13 @@
             font-weight: 700;
             font-size: 14px;
             a {
+                box-shadow: rgba(238, 2, 2, 0.16) 1px 4px 8px 0px;
+                padding: 5px;
                 margin-left: 5px;
                 font-size: 12px;
                 line-height: 20px;
                 font-weight: 500;
                 font-size: 14px;
-                padding: 2px;
 
                 &:nth-child(odd) {
                     display: inline-block;
@@ -70,6 +71,10 @@
                     background-color: crimson;
                     color: #fff;
                 }
+            }
+            .hover {
+                font-weight: bold;
+                box-shadow: #ef3006 1px 4px 8px 0px;
             }
         }
     }

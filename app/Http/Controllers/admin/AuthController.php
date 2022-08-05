@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
 
 
-        return redirect()->route("admin.order.list");
+        return redirect()->route("admin.info.show");
     }
 
     public function login()

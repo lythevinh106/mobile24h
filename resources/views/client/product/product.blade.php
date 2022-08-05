@@ -30,7 +30,8 @@
                 <span class="content-product-tag-title">
                     Tags:
                     @foreach ($tags_for_category as $tag)
-                        <a href="{{ request()->fullUrlWithQuery(['tag' => $tag->id]) }}">{{ $tag->name }}</a>
+                        <a class=" {{ request()->input('tag') == $tag->id ? 'hover' : '' }}"
+                            href="{{ request()->fullUrlWithQuery(['tag' => $tag->id]) }}">{{ $tag->name }}</a>
                     @endforeach
 
 

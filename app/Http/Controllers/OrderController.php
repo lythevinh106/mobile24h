@@ -99,8 +99,10 @@ class OrderController extends Controller
 
             ///// update lai so luong san pham database
             $old_product_quantity = Product::find($product_id)->number_product_quantity;
+            $old_product_sold = Product::find($product_id)->product_sold;
             Product::find($product_id)->update([
-                "number_product_quantity" => $old_product_quantity - $qty
+                "number_product_quantity" => $old_product_quantity - $qty,
+                "product_sold" => $old_product_sold + $qty
             ]);
         }
 

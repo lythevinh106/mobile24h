@@ -201,49 +201,52 @@
                                 $dem++;
                             @endphp
                             @foreach ($product_promotion->products as $item)
-                                <div class="tab-content__box-item ">
-                                    <div class="tab-content__box-item__img">
-                                        <a href="{{ route('load_detail_product', $item->id) }}"> <img
-                                                data-src="{{ $item->feature_image }}" alt=""></a>
-                                    </div>
-                                    <div class="tab-content__box-item__sale sale--vnpay">
-                                        <img src="{{ asset('client/images/icon6-50x50.png') }}" alt="">
-                                        <span>VNPAY GIẢM 500K</span>
-                                    </div>
+                                @if ($item->active == 1)
+                                    <div class="tab-content__box-item ">
+                                        <div class="tab-content__box-item__img">
+                                            <a href="{{ route('load_detail_product', $item->id) }}"> <img
+                                                    data-src="{{ $item->feature_image }}" alt=""></a>
+                                        </div>
+                                        <div class="tab-content__box-item__sale sale--vnpay">
+                                            <img src="{{ asset('client/images/icon6-50x50.png') }}" alt="">
+                                            <span>VNPAY GIẢM 500K</span>
+                                        </div>
 
-                                    <div class="tab-content__box-item__title">
-                                        <a href="{{ route('load_detail_product', $item->id) }}"> {{ $item->name }}</a>
-                                    </div>
-                                    <div class="tab-content__box-item__old-price">
-                                        {{ \App\Helpers\client_helper::format_price($item->price) }}
-                                    </div>
-                                    <div class="tab-content__box-item__new-price">
-                                        {{ \App\Helpers\client_helper::format_price($item->latest_price) }}
-                                    </div>
+                                        <div class="tab-content__box-item__title">
+                                            <a href="{{ route('load_detail_product', $item->id) }}">
+                                                {{ $item->name }}</a>
+                                        </div>
+                                        <div class="tab-content__box-item__old-price">
+                                            {{ \App\Helpers\client_helper::format_price($item->price) }}
+                                        </div>
+                                        <div class="tab-content__box-item__new-price">
+                                            {{ \App\Helpers\client_helper::format_price($item->latest_price) }}
+                                        </div>
 
 
 
-                                    <div class="tab-content__box-item__cart cart--main">
-                                        {{-- <span><a href="{{ route('cart.add', $item->id) }}">Thêm <i
+                                        <div class="tab-content__box-item__cart cart--main">
+                                            {{-- <span><a href="{{ route('cart.add', $item->id) }}">Thêm <i
                                            
                                             class="fa-solid fa-cart-shopping"></i></a></span> --}}
-                                        @if ($item->number_product_quantity > 0)
-                                            <span class=""><a class="text-white"
-                                                    onclick="add_cart_ajax({{ $item->id }},this)">Thêm
-                                                    <i class="fa-solid fa-cart-shopping"></i></a></span>
+                                            @if ($item->number_product_quantity > 0)
+                                                <span class=""><a class="text-white"
+                                                        onclick="add_cart_ajax({{ $item->id }},this)">Thêm
+                                                        <i class="fa-solid fa-cart-shopping"></i></a></span>
 
-                                            {{-- <span><a href="">Mua<i class="fa-solid fa-dollar-sign"></i></a></span> --}}
+                                                {{-- <span><a href="">Mua<i class="fa-solid fa-dollar-sign"></i></a></span> --}}
 
 
-                                            <span><a href="{{ route('load_detail_product', $item->id) }}">Mua<i
-                                                        class="fa-solid fa-dollar-sign"></i></a></span>
-                                        @else
-                                            <div class="text-danger h6"> Đã Hết Hàng</div>
-                                        @endif
+                                                <span><a href="{{ route('load_detail_product', $item->id) }}">Mua<i
+                                                            class="fa-solid fa-dollar-sign"></i></a></span>
+                                            @else
+                                                <div class="text-danger h6"> Đã Hết Hàng</div>
+                                            @endif
+
+                                        </div>
 
                                     </div>
-
-                                </div>
+                                @endif
                             @endforeach
 
 

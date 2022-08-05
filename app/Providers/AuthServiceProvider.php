@@ -52,6 +52,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->defineRole();
         $this->defineOrder();
         $this->defineOther();
+        $this->definePermission();
     }
 
     public function defineAdmin()
@@ -123,6 +124,15 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define("other", function ($user) {
 
             return  $this->checkPermissionAccess("other", $user);
+        });
+    }
+
+
+    public function definePermission()
+    {
+        Gate::define("permission", function ($user) {
+
+            return  $this->checkPermissionAccess("permission", $user);
         });
     }
 }

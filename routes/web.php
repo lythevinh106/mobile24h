@@ -98,14 +98,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ////admin-order
         Route::prefix('order')->name("order.")->group(function () {
 
-            Route::get('/list', [AdminOrderController::class, "index"])->name('list')->middleware("can:role-list");;
+            Route::get('/list', [AdminOrderController::class, "index"])->name('list')->middleware("can:order-list");;
             // Route::get('/add', [UserController::class, "create"])->name('create');
 
             // Route::post('/store', [UserController::class, "store"])->name('store');
-            Route::get('/edit/{id}', [AdminOrderController::class, "show"])->name("edit")->middleware("can:role-edit");
+            Route::get('/edit/{id}', [AdminOrderController::class, "show"])->name("edit")->middleware("can:order-edit");
             Route::post('/update/{id}', [AdminOrderController::class, "update"])->name("update");
 
-            Route::DELETE('/delete', [AdminOrderController::class, "delete"])->middleware("can:role-delete");;
+            Route::DELETE('/delete', [AdminOrderController::class, "delete"])->middleware("can:order-delete");;
         });
 
 
@@ -274,7 +274,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //////phan quyen
 
         ////permission
-        Route::prefix('permission')->name("permission.")->middleware("can:other")->group(function () {
+        Route::prefix('permission')->name("permission.")->middleware("can:permission")->group(function () {
 
             Route::get('/add', [PermissionController::class, "create"])->name('create');
             Route::post('/store', [PermissionController::class, "store"])->name('store');

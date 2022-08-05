@@ -11,8 +11,12 @@ dd($categories); /// view ddc lay tu view composer:https://sethphat.com/sp-893/l
         </li>
 
         @foreach ($categories as $category)
+            @php
+                // dd($categories);
+            @endphp
             @if ($category->parent_id == 0)
                 @php
+                    
                     $str_convert = \App\Helpers\client_helper::convert_str($category->name);
                 @endphp
                 <li class="col-md-2"><a
@@ -23,12 +27,14 @@ dd($categories); /// view ddc lay tu view composer:https://sethphat.com/sp-893/l
                     @if ($category->category_children->count() > 0)
                         <ul class="menu-children">
                             @foreach ($category->category_children as $category_children)
-                                @php
-                                    $str_convert = \App\Helpers\client_helper::convert_str($category_children->name);
-                                @endphp
-                                <li><a
-                                        href="/danh-muc/{{ $category_children->id }}-{{ Str::slug($str_convert, '-') }} ">{{ $category_children->name }}</a>
-                                </li>
+                                @if ($category_children->active == 1)
+                                    @php
+                                        $str_convert = \App\Helpers\client_helper::convert_str($category_children->name);
+                                    @endphp
+                                    <li><a
+                                            href="/danh-muc/{{ $category_children->id }}-{{ Str::slug($str_convert, '-') }} ">{{ $category_children->name }}</a>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                     @endif

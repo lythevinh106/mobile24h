@@ -17,6 +17,8 @@ class CategoryComposer
     public function compose(View $view)
     {
         $load_categories = Category::where("active", 1)->get();
+
+        // dd($load_categories);
         // bind to view
         $view->with('categories',  $load_categories);
     }

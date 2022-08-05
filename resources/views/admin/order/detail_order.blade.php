@@ -44,7 +44,7 @@
                         </td>
                         <td>
 
-                            <input type="number" value="{{ $order_item->quantity }}"
+                            <input readonly type="number" value="{{ $order_item->quantity }}"
                                 name="qty[{{ $order_item->product_id }}]">
 
                         </td>

@@ -48,7 +48,7 @@
                 </h4>
                 <div id="box-module" class="row">
                     @foreach ($permission_parents as $permission_parent)
-                        @if ($permission_parent->name != 'other')
+                        @if ($permission_parent->name != 'other' && $permission_parent->name != 'permission')
                             <div class="card border-primary mb-3 col-md-12 mt-3 ">
                                 <div class="card-header">
                                     <label>
