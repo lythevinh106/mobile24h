@@ -368,6 +368,7 @@ Route::get("/cart/add_ajax", [CartController::class, "add_ajax"])->name("cart.ad
 
 ////order
 
+
 Route::post("/order/store", [OrderController::class, "store"])->name("order.store");
 Route::get("/order/success", [OrderController::class, "success"])->name("order.success");
 Route::post("/order/momo_payment", [OrderController::class, "momo_payment"])->name("order.momo_payment");
