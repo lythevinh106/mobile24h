@@ -257,6 +257,7 @@ trait OrderService
 
         $jsonResult = json_decode($result, true);  // decode json
         // dd($result);
+        // dd($jsonResult);
 
 
         return redirect()->to($jsonResult['payUrl']);

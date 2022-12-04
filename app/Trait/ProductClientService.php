@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 
 
-
-
 trait ProductClientService
 {
     // public $LIMIT = 10;
@@ -64,9 +62,6 @@ trait ProductClientService
         $list_products->when($request->has("start"), function ($query) use ($request) {
             $query->whereBetween('latest_price', [$request->input("start"), $request->input("to")]);
         });
-
-
-
 
 
 
