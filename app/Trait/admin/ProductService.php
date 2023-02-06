@@ -30,10 +30,6 @@ trait ProductService
 
 
 
-
-
-
-
         if ($request->input("fill_category")) {
 
             $list_products->whereHas('category', function (Builder $query) use ($request) {

@@ -30,6 +30,8 @@ class HomeController extends Controller
         // dd(District::find(2)->province);
 
 
+        // dd("home");
+
         $time_now =  Carbon::now()->toDateTimeString();
 
 
