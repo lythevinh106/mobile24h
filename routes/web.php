@@ -300,10 +300,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 
-
-
-
-
         Route::prefix('upload')->name("upload.")->group(function () {
 
             Route::post('/uploadthumb', [UploadController::class, "uploadthumb"])->name('uploadthumb');
@@ -319,6 +315,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 Route::get("/", [HomeController::class, "index"])->name("client.home");
+Route::get("/testredis", [HomeController::class, "test_redis"])->name("client.redis");
+Route::get("/testpusher", [HomeController::class, "test_pusher"]);
 
 
 ///login
@@ -390,20 +388,6 @@ Route::post("/order/store_check", [OrderController::class, "store_check"])->name
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Route::get("", [MainController::class, "index"]);
 
 Route::middleware('auth')->group(function () {
@@ -412,3 +396,9 @@ Route::middleware('auth')->group(function () {
     Route::post("/info/store", [ClientInfoController::class, "info_store"])->name("info.store");
     Route::get("/info/order_show", [ClientInfoController::class, "info_order_show"])->name("info.order_show");
 });
+
+
+
+
+////docs
+//// extra redis for category

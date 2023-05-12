@@ -4,6 +4,8 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
 <title>Dashboard - {{ $title }}</title>
 
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />

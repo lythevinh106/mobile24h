@@ -43,6 +43,10 @@ class CartController extends Controller
         return $this->add_cart($id, $qty, $request);
     }
 
+    // public function add_cart($id, $qty = 1, Request $request)
+    // {
+    // }
+
 
 
     public function destroy()

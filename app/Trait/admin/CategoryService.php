@@ -2,6 +2,8 @@
 
 namespace App\Trait\admin;
 
+use App\Events\AlertChangeCategory;
+use App\Events\TriggerChangeCategory;
 use App\Models\Category;
 
 
@@ -53,6 +55,8 @@ trait CategoryService
     {
 
         $list_categories = Category::all();
+
+
         return  $list_categories;
     }
 
@@ -92,6 +96,12 @@ trait CategoryService
             $query->save();
 
 
+            // event(new AlertChangeCategory('hello world'));
+            event(new AlertChangeCategory('đã có cập nhật loại sản phẩm mới bạn có thể tải lại trang để xem '));
+            // broadcast(new AlertChangeCategory("hello world"));
+
+
+            event(new TriggerChangeCategory);
 
 
 

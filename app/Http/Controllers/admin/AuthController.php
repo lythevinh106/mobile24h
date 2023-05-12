@@ -57,9 +57,6 @@ class AuthController extends Controller
 
         $creds = $request->only('name', 'password');
 
-
-
-
         // dd(Hash::make("1061998aA"));
 
         // dd(Auth::guard('admin')->attempt($creds));

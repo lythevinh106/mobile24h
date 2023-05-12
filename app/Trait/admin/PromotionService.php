@@ -2,6 +2,7 @@
 
 namespace App\Trait\admin;
 
+use App\Events\AlertChangeCategory;
 use App\Models\Category;
 use App\Models\Product;
 use App\Trait\admin\ProductImageService;

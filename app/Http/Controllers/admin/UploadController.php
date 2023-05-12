@@ -63,9 +63,6 @@ class UploadController extends Controller
     {
 
         //dd($request->file("file2"));
-
-
-
         $request->validate(
             [
 
@@ -89,13 +86,6 @@ class UploadController extends Controller
 
 
         $url = $this->multiupload($request->file("file2"));
-
-
-
-
-
-
-
 
 
         if ($url != false) {

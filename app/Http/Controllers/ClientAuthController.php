@@ -152,8 +152,6 @@ class ClientAuthController extends Controller
         ];
 
 
-
-
         // dd(Hash::make("1061998aA"));
 
         // dd(Auth::guard('admin')->attempt($creds));

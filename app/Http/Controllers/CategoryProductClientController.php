@@ -31,7 +31,8 @@ class CategoryProductClientController extends Controller
         ////tags
 
         $tags_for_category = Product::join('categories', 'categories.id', '=', 'products.category_id')
-            ->join("product_tags", "product_tags.product_id", "=", "products.id")->groupBy("tags.name")->groupBy("tags.id")->select('tags.id', 'tags.name')
+            ->join("product_tags", "product_tags.product_id", "=", "products.id")
+            ->groupBy("tags.name")->groupBy("tags.id")->select('tags.id', 'tags.name')
             ->join("tags", "tags.id", "=", "product_tags.tag_id")
 
             ->where(Category::find($id)->parent_id == 0 ? "categories.parent_id" : "categories.id", $id)

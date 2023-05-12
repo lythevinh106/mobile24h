@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Events\AlertChangeCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -106,18 +107,14 @@ class PromotionController extends Controller
             'start_date' => "ngày bắt đầu khuyến mãi",
             'end_date' => "ngày kết thúc khuyến mãi"
 
-
-
         ]);
         // dd(Carbon::parse($request->input("start_date"))->toDateTimeString());
 
         $request->except('_token');
 
-
-
         // dd($request->input());
         Promotion::create($request->all());
-
+        event(new AlertChangeCategory('đã có cập nhật khuyến mãi mới bạn có thể tải lại trang để xem '));
         return redirect()->back()->with("success", "Thêm Chương Trình Khuyến MãiThành Công");
     }
 
@@ -193,6 +190,7 @@ class PromotionController extends Controller
         $promotion->fill($request->input());
         $promotion->save();
         $this->sync_promotion();
+        event(new AlertChangeCategory('đã có cập nhật khuyến mãi mới bạn có thể tải lại trang để xem '));
         return redirect()->back()->with("success", "Cập Nhật Chương Trình Khuyến MãiThành Công");
     }
 

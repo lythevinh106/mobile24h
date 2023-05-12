@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TriggerChangeCategory;
 use App\Models\Banner;
 use App\Models\Slider;
 
@@ -19,6 +20,7 @@ use App\Models\Cart_item;
 use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class HomeController extends Controller
 {
@@ -71,5 +73,33 @@ class HomeController extends Controller
 
 
         );
+    }
+
+
+    public function test_redis()
+    {
+        // Redis::set('user:1', 'Taylor');
+        // Redis::set('user:2', 'Hoin');
+        // Redis::set('user:3', 'vinh');
+        // Redis::setex('user:4', 30, 'Taylor hethan');
+
+        // $values = Redis::get('user');
+        // event(new TriggerChangeCategory("ly the vinh"));
+        $arr = ["ly", "the", "vinh"];
+        Redis::set('mang1', json_encode($arr, TRUE));
+
+        $value = json_decode(Redis::get("mang1"), TRUE);
+        dd($value);
+
+
+        // nên sử dung del để xóa cache để câp nhat lai
+        //     Redis::del('blog_1');
+        // }
+
+    }
+
+    public function test_pusher()
+    {
+        return view("client.demopusher");
     }
 }

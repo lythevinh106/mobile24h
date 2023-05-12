@@ -12,7 +12,12 @@
 
 <script src="{{ asset('client/public/js/cart.js') }}"></script>
 <script src="{{ asset('client/public/js/product-detail.js') }} "></script>
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+
+
 @yield('js')
+
+
 
 
 </html>

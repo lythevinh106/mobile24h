@@ -198,7 +198,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
@@ -227,6 +227,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Pusher' => Pusher\Pusher::class,
 
     ])->toArray(),
 

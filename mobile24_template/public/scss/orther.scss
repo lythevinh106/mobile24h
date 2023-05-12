@@ -23,6 +23,7 @@ $c_white_background_main: #f3f3f3;
     .active {
         background-color: rgba(219, 0, 0);
     }
+
     &-box {
         width: 85px;
         height: 85px;
@@ -53,6 +54,7 @@ $c_white_background_main: #f3f3f3;
 
     right: 6px;
     z-index: 3;
+
     img {
         width: 70px;
         height: auto;
@@ -84,6 +86,7 @@ $c_white_background_main: #f3f3f3;
         width: 22px;
         height: 22px;
     }
+
     span {
         color: rgb(255 255 255);
         display: inline-block;
@@ -111,6 +114,7 @@ $c_white_background_main: #f3f3f3;
         height: 22px;
         transform: translateY(-0.3px);
     }
+
     span {
         color: rgb(255 255 255);
         display: inline-block;
@@ -142,6 +146,7 @@ $c_white_background_main: #f3f3f3;
 
             font-family: WorkSans;
         }
+
         i {
             display: inline-block;
             margin-left: 2px;
@@ -152,6 +157,7 @@ $c_white_background_main: #f3f3f3;
 .overview--btn {
     display: flex;
     justify-content: center;
+
     span {
         cursor: pointer;
         padding: 8px 80px;
@@ -159,6 +165,7 @@ $c_white_background_main: #f3f3f3;
 
         border-radius: 5px;
     }
+
     &:hover span {
         background-color: rgb(56, 56, 168);
     }
@@ -181,6 +188,7 @@ $c_white_background_main: #f3f3f3;
     padding: 18px 22px;
     background-color: rgba(255, 255, 255);
     color: #333333;
+
     h3 {
         color: #333333;
         font-family: Roboto;
@@ -189,21 +197,25 @@ $c_white_background_main: #f3f3f3;
         line-height: 26px;
         text-align: center;
     }
+
     &__title {
         margin-top: 15px;
         color: #333333;
         font-size: 14px;
     }
+
     &__btn {
         display: flex;
         justify-content: space-evenly;
         margin-top: 15px;
+
         button {
             font-size: 14px;
 
             line-height: 16px;
             padding: 10px 20px;
             text-align: center;
+
             &:nth-child(1) {
                 background-color: #eeeeee;
                 border-color: #eeeeee;
@@ -212,6 +224,7 @@ $c_white_background_main: #f3f3f3;
                 border-width: 1px;
                 color: #212121;
             }
+
             &:nth-child(2) {
                 background-color: #1435c3;
                 border-color: #1435c3;
@@ -238,11 +251,13 @@ $c_white_background_main: #f3f3f3;
         color: $c_yellow_main;
     }
 }
+
 .slick-prev {
     position: absolute;
     left: 0;
     z-index: 2;
 }
+
 .slick-next {
     position: absolute;
     right: 0;
@@ -261,6 +276,7 @@ $c_white_background_main: #f3f3f3;
     margin: 0px 5px 0px 0px;
     padding: 3px 6px 4px;
 }
+
 .date--time {
     color: rgb(170 170 170);
     display: inline;
@@ -280,6 +296,7 @@ $c_white_background_main: #f3f3f3;
         background-color: #fd5465;
         border-radius: 50%;
         cursor: pointer;
+
         i {
             position: absolute;
             top: 50%;
@@ -288,6 +305,7 @@ $c_white_background_main: #f3f3f3;
             color: #fff;
         }
     }
+
     position: relative;
     padding: 0px;
     z-index: 6;
@@ -303,6 +321,7 @@ $c_white_background_main: #f3f3f3;
     flex-wrap: wrap;
     background-color: $c_white_background_main;
     display: none;
+
     &__img {
         width: 32%;
         background: #fbe9e7;
@@ -321,9 +340,11 @@ $c_white_background_main: #f3f3f3;
         margin: 0 auto;
         width: 68%;
         display: flex;
+
         form {
             width: 100%;
         }
+
         &__title {
             width: 100%;
             color: #333333;
@@ -336,8 +357,10 @@ $c_white_background_main: #f3f3f3;
             background-color: #333333;
             margin-top: 40px;
         }
+
         &__name {
             margin-top: 40px;
+
             label {
                 display: block;
                 color: #333333;
@@ -346,6 +369,7 @@ $c_white_background_main: #f3f3f3;
                 margin: 0px 0px 5px;
                 text-align: left;
             }
+
             input {
                 width: 100%;
                 border: none;
@@ -356,6 +380,7 @@ $c_white_background_main: #f3f3f3;
 
         &__password {
             margin-top: 20px;
+
             label {
                 display: block;
                 color: #333333;
@@ -364,6 +389,7 @@ $c_white_background_main: #f3f3f3;
                 margin: 0px 0px 5px;
                 text-align: left;
             }
+
             input {
                 width: 100%;
                 border: none;
@@ -378,8 +404,8 @@ $c_white_background_main: #f3f3f3;
             align-items: center;
             margin-top: 10px;
 
-            input {
-            }
+            input {}
+
             label {
                 display: block;
                 margin-left: 10px;
@@ -387,6 +413,7 @@ $c_white_background_main: #f3f3f3;
                 color: #333333;
             }
         }
+
         &__btn {
             margin-top: 20px;
             width: 100%;
@@ -394,6 +421,7 @@ $c_white_background_main: #f3f3f3;
             flex-wrap: wrap;
 
             justify-content: space-between;
+
             button {
                 width: 45%;
                 padding: 12px;
@@ -402,18 +430,19 @@ $c_white_background_main: #f3f3f3;
                 font-weight: 600;
                 border: rgb(0, 125, 105) 1px solid;
                 color: #ffffff;
+
                 &:nth-child(1) {
-                    background: transparent linear-gradient(180deg, #00917a 0%, #00483d 100%) 0% 0% no-repeat
-                        padding-box;
+                    background: transparent linear-gradient(180deg, #00917a 0%, #00483d 100%) 0% 0% no-repeat padding-box;
                     box-shadow: 0 4px 6px #00000029;
                 }
-                &:nth-child(2) {
-                }
+
+                &:nth-child(2) {}
             }
         }
 
         &__forget {
             margin-top: 20px;
+
             a {
                 color: #222222;
 

@@ -46,7 +46,6 @@ trait ClientUserService
         // dd(Str::random(10) . Carbon::now()->format("Y-m-d-H:i-s"));
         // dd($request->input());
 
-
         $address = Province::find((int)$request->input("province"))->name
             . "-" . District::find((int)$request->input("district"))->name . "-" . $request->input("address");
         $email_token = Str::random(10) . Carbon::now()->format("Y-m-d-H:i-s");
